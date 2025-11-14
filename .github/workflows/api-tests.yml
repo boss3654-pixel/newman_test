@@ -19,10 +19,10 @@ jobs:
 
       - name: Run API Collection
         env:
-          POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }} 
+          POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
         run: |
           newman run "QA TEST.postman_collection.json" \
-            --env-var base_url="https://farming-simulator.pstmn.io" \
+            --env-var base_url="https://jsonplaceholder.typicode.com/" \
             --env-var postman_api_key="$POSTMAN_API_KEY" \
             --reporters cli,html \
             --reporter-html-export newman-report.html
